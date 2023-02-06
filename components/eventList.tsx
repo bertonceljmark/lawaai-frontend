@@ -30,7 +30,7 @@ const EventList = () => {
     if (eventPhotos.length > 0) {
       return setCurrentPhoto(eventPhotos.find((image) => image.id == photoId));
     }
-  }, [photoId]);
+  }, [photoId, eventPhotos]);
 
   const handleClick = (id: number) => {
     return () => {
