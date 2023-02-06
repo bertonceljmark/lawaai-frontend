@@ -6,9 +6,9 @@ const MobileMenuItem = ({ name, active }) => {
     <li>
       <Link className="" href={`/${name !== "home" ? name : ""}`}>
         <span
-          className={`block py-2 pl-3 pr-4 text-white rounded md:bg-transparent ${
+          className={`block py-2 pl-3 pr-4 text-white rounded ${
             active == name || (active === "" && name === "home")
-              ? "bg-secondary md:text-[#852cf1]"
+              ? "bg-secondary"
               : "bg-primary"
           }`}
         >

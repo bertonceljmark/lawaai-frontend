@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const MenuItem = ({ name, active }) => {
+const MenuItem = ({ name = "", active = "" }) => {
   return (
     <div
       className={`m-1 px-3 rounded-md bg-transparent flex justify-center item-center ${

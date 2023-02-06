@@ -1,28 +1,20 @@
 import React from "react";
+import { Rubik_Glitch } from "@next/font/google";
+import { coolFont } from "./utils/fonts";
 
-const Card = ({ label }) => {
+const Card = ({ label, info, imgPath }) => {
   return (
     <div className="flex justify-center m-5">
-      <div className="rounded-lg shadow-lg bg-white max-w-sm">
-        <a href="#!">
-          <img
-            className="rounded-t-lg"
-            src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
-            alt=""
-          />
-        </a>
-        <div className="p-6">
-          <h5 className="text-gray-900 text-xl font-medium mb-2">Card title</h5>
-          <p className="text-gray-700 text-base mb-4">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <button
-            type="button"
-            className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-          >
-            Button
-          </button>
+      <div className="rounded-lg shadow-lg max-w-sm bg-white/30 backdrop-opacity-5">
+        <div className="flex justify-center items-center p-5">
+          <img className="rounded-t-lg h-36" src={imgPath} alt="" />
+        </div>
+        <div className="p-6 bg-white/50 backdrop-opacity-5 min-h-[250px] rounded-lg">
+          <h3 className="text-gray-900 text-3xl font-medium mb-2 text-center">
+            <span className={coolFont.className}>{label}</span>
+          </h3>
+          <br></br>
+          <p className="text-gray-700 text-base mb-4">{info}</p>
         </div>
       </div>
     </div>

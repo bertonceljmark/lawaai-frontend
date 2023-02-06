@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import MenuItem from "./menuItem";
 import MobileMenuItem from "./mobileMenuItem";
 
-const Navbar = ({ isMobile }) => {
+const Navbar = ({ isMobile = false }) => {
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const active = router.pathname.replace("/", "");
@@ -15,9 +15,9 @@ const Navbar = ({ isMobile }) => {
 
   if (!isMobile) {
     return (
-      <nav className="right-0 left-0 m-auto p-0 w-ful pt-5 text-lg fixed text-white top-0 gap-0 rounded-br-md rounded-bl-md backdrop-blur-md flex justify-between item-center">
+      <nav className="right-0 left-0 m-auto p-0 w-ful pt-5 text-lg text-white top-0 gap-0 rounded-br-md rounded-bl-md backdrop-blur-md flex justify-between item-center absolute z-30">
         <div
-          className="flex lg:min-w-0 lg:flex-1 flex-1 m-auto ml-20"
+          className="flex lg:min-w-0 flex-1 m-auto ml-20"
           aria-label="Global"
         >
           <Link className="mx-5" href={"/"}>
@@ -30,30 +30,30 @@ const Navbar = ({ isMobile }) => {
           <MenuItem name="residents" active={active} />
           <MenuItem name="blog" active={active} />
           <MenuItem name="contact" active={active} />
+          <MenuItem name="events" active={active} />
         </div>
       </nav>
     );
   }
 
   return (
-    <nav className="bg-primary px-2 sm:px-4 py-2.5">
+    <nav className="bg-primary px-2 py-2.5 z-10 absolute w-full">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         <a href="/" className="flex items-center">
           <img
             src="media/lawaai-logo.png"
-            className="h-10 mr-3 sm:h-9"
+            className="h-10 mr-3"
             alt="Lawaai Logo"
           />
-          <span className="self-center text-xl font-semibold whitespace-nowrap">
+          <span className="self-center text-xl font-semibold whitespace-nowrap text-white">
             Lawaai
           </span>
         </a>
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           type="button"
-          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-secondary focus:outline-none focus:ring-2 focus:bg-[#852cf1] focus:ring-transparent"
+          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg hover:bg-secondary focus:outline-none focus:ring-2 focus:bg-[#852cf1] focus:ring-transparent"
         >
-          <span className="sr-only">Open main menu</span>
           <svg
             className="w-6 h-6 fill-primary hover:fill-secondary"
             aria-hidden="true"
@@ -63,24 +63,23 @@ const Navbar = ({ isMobile }) => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             ></path>
           </svg>
         </button>
         <div
-          className={`w-full md:block md:w-auto ${
-            mobileMenuOpen ? "" : "hidden"
-          }`}
+          className={`w-full ${mobileMenuOpen ? "" : "hidden"}`}
           id="navbar-default"
         >
-          <ul className="flex flex-col p-4 mt-4  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium ">
+          <ul className="flex flex-col p-4 mt-4">
             <MobileMenuItem name={"home"} active={active}></MobileMenuItem>
             <MobileMenuItem name={"about"} active={active}></MobileMenuItem>
             <MobileMenuItem name={"residents"} active={active}></MobileMenuItem>
             <MobileMenuItem name={"blog"} active={active}></MobileMenuItem>
             <MobileMenuItem name={"contact"} active={active}></MobileMenuItem>
+            <MobileMenuItem name={"events"} active={active}></MobileMenuItem>
           </ul>
         </div>
       </div>

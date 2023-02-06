@@ -10,8 +10,18 @@ module.exports = {
       ...theme("colors"),
       primary: "#f1852c",
       secondary: "#852cf1",
-      danger: "#e3342f",
     }),
+    variants: {
+      extend: {
+        fontWeight: ["responsive", "hover", "focus"],
+        opacity: ["hover"],
+        borderColor: ["hover", "focus"],
+        margin: ["first", "last"],
+        backgroundColor: ["odd", "even"],
+        scale: ["hover", "active", "group-hover"],
+        display: ["hover", "active", "group-hover"],
+      },
+    },
     extend: {
       fontFamily: {
         gangsta: ["Great Vibes", "cursive"],
