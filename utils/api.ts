@@ -14,8 +14,8 @@ export async function getEventPhotos({
   galleryId,
   setEventPhotos,
 }: {
-  galleryId: number;
-  setEventPhotos: ({}) => void;
+  galleryId: any;
+  setEventPhotos: any;
 }) {
   try {
     const results = await fetch(
@@ -39,7 +39,7 @@ export async function getEventPhotos({
             sizes: item.attributes.formats,
           };
         })
-        .sort((a, b) => Number(a.id) - Number(b.id))
+        .sort((a: any, b: any) => Number(a.id) - Number(b.id))
     );
   } catch (error) {}
 }

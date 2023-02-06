@@ -1,9 +1,16 @@
 import React from "react";
-import { Rubik_Glitch } from "@next/font/google";
 import { coolFont } from "./utils/fonts";
 import Image from "next/image";
 
-const Card = ({ label, info, imgPath }) => {
+const Card = ({
+  label,
+  info,
+  imgPath,
+}: {
+  label: any;
+  info: any;
+  imgPath: any;
+}) => {
   return (
     <div className="flex justify-center m-5">
       <div className="rounded-lg shadow-lg max-w-sm bg-white/30 backdrop-opacity-5">

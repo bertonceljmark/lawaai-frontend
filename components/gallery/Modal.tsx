@@ -1,6 +1,6 @@
 import { Dialog } from "@headlessui/react";
 import { motion } from "framer-motion";
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useState } from "react";
 import useKeypress from "react-use-keypress";
 import type { ImageProps } from "../../utils/types";
 import Loader from "../loader";
@@ -14,14 +14,11 @@ export default function Modal({
   setPhotoId,
 }: {
   images: ImageProps[];
-  onClose: () => void;
-  currentPhoto: {};
-  setCurrentPhoto: () => void;
-  photoId: number;
+  currentPhoto: any;
+  setCurrentPhoto: any;
+  photoId: number | string;
   setPhotoId: (newId: number | undefined) => void;
 }) {
-  let overlayRef = useRef();
-
   const [direction, setDirection] = useState(0);
 
   function handleClose() {
@@ -59,11 +56,9 @@ export default function Modal({
           static
           open={!!photoId}
           onClose={handleClose}
-          initialFocus={overlayRef}
           className="fixed inset-0 z-10 flex items-center justify-center"
         >
           <Dialog.Overlay
-            ref={overlayRef}
             as={motion.div}
             key="backdrop"
             className="fixed inset-0 z-30 bg-black/70 backdrop-blur-2xl"

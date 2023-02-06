@@ -9,9 +9,13 @@ import Loader from "./loader";
 const EventList = () => {
   const [events, setEvents] = useState([]);
   const [eventPhotos, setEventPhotos] = useState([]);
-  const [galleryId, setGalleryId] = useState(undefined);
+  const [galleryId, setGalleryId] = useState<number | string | undefined>(
+    undefined
+  );
   const [currentPhoto, setCurrentPhoto] = useState({});
-  const [photoId, setPhotoId] = useState(undefined);
+  const [photoId, setPhotoId] = useState<number | string | undefined>(
+    undefined
+  );
 
   useEffect(() => {
     getEvents(setEvents);
@@ -21,14 +25,16 @@ const EventList = () => {
     if (!galleryId) return;
 
     getEventPhotos({
-      galleryId: parseInt(galleryId || "0"),
+      galleryId: galleryId || "0",
       setEventPhotos,
     });
   }, [galleryId]);
 
   useEffect(() => {
     if (eventPhotos.length > 0) {
-      return setCurrentPhoto(eventPhotos.find((image) => image.id == photoId));
+      return setCurrentPhoto(
+        eventPhotos.find((image: any) => image.id == photoId) || {}
+      );
     }
   }, [photoId, eventPhotos]);
 
@@ -67,14 +73,13 @@ const EventList = () => {
             images={eventPhotos}
             currentPhoto={currentPhoto}
             setCurrentPhoto={setCurrentPhoto}
-            setEventPhotos={setEventPhotos}
             photoId={photoId}
             setPhotoId={setPhotoId}
           />
         )}
         <div className="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4">
           {!!eventPhotos?.length &&
-            eventPhotos.map(({ id, sizes }) => (
+            eventPhotos.map(({ id, sizes }: { id: any; sizes: any }) => (
               <div
                 key={id}
                 className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
