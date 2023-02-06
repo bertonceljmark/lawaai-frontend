@@ -11,17 +11,17 @@ const CardSection = () => {
         <Card
           label="The People"
           info="Everything we do comes back to people. People are what makes us tick, people are what makes what we do worth it."
-          imgPath="media/people-icon.png"
+          imgPath="/media/people-icon.png"
         />
         <Card
           label="The Music"
           info="We founded Lawaai group, because we wanted to make sure that best quality music gets delivered to techno fans on local level."
-          imgPath="media/music-icon.png"
+          imgPath="/media/music-icon.png"
         ></Card>
         <Card
           label="The Passion"
           info="What ties everything together is our passion. Our passion towards our guests and towards our music is what makes unique and makes as what we are."
-          imgPath="media/passion-icon.png"
+          imgPath="/media/passion-icon.png"
         ></Card>
       </div>
     </div>

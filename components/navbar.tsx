@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -20,8 +21,8 @@ const Navbar = ({ isMobile = false }) => {
           className="flex lg:min-w-0 flex-1 m-auto ml-20"
           aria-label="Global"
         >
-          <Link className="mx-5" href={"/"}>
-            <img className="h-20" src="media/lawaai-logo.png" alt="" />
+          <Link className="mx-5 h-20 w-20 relative" href={"/"}>
+            <Image fill src="/media/lawaai-logo.png" alt="" />
           </Link>
         </div>
         <div className="right-0 left-0 m-auto pr-10 py-3text-lg text-white top-0 gap-0 flex justify-center item-center">
@@ -39,16 +40,19 @@ const Navbar = ({ isMobile = false }) => {
   return (
     <nav className="bg-primary px-2 py-2.5 z-10 absolute w-full">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
-        <a href="/" className="flex items-center">
-          <img
-            src="media/lawaai-logo.png"
-            className="h-10 mr-3"
-            alt="Lawaai Logo"
-          />
-          <span className="self-center text-xl font-semibold whitespace-nowrap text-white">
+        <Link href="/" className="flex items-center">
+          <div className="h-10 w-10 relative">
+            <Image
+              src="/media/lawaai-logo.png"
+              className="mr-3"
+              alt="Lawaai Logo"
+              fill
+            />
+          </div>
+          <span className="self-center text-xl font-semibold whitespace-nowrap text-white relative">
             Lawaai
           </span>
-        </a>
+        </Link>
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           type="button"

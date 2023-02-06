@@ -36,6 +36,8 @@ export default function Carousel({
       >
         <Image
           src={currentPhoto.blurDataUrl}
+          width={384}
+          height={384}
           className="pointer-events-none h-full w-full"
           alt="blurred background"
           fill
