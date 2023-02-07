@@ -4,7 +4,7 @@ import React from "react";
 
 const TeamSection = ({ name = "", active = "" }) => {
   return (
-    <div className="container my-24 px-6 mx-auto">
+    <div className="container  px-6 mx-auto">
       <section className="mb-32 text-gray-800 text-center">
         <h2 className="text-4xl w-full text-center text-white font-bold mb-32">
           Meet the team
@@ -201,8 +201,8 @@ const TeamSection = ({ name = "", active = "" }) => {
                 </div>
               </div>
               <div className="p-6">
-                <h5 className="text-lg font-bold mb-4">Ana Štebe</h5>
-                <p className="mb-6">Design / Marketing</p>
+                <h5 className="text-lg font-bold mb-4">Mark Bertoncelj</h5>
+                <p className="mb-6">DJ / Tehnician</p>
                 <ul className="list-inside flex mx-auto justify-center">
                   <a href="#!" className="px-2">
                     <svg
@@ -251,15 +251,15 @@ const TeamSection = ({ name = "", active = "" }) => {
                   <Image
                     width={150}
                     height={150}
-                    src="/media/res-berti.jpg"
+                    src="/media/team/pero.jpg"
                     alt=""
                     className="rounded-full mx-auto shadow-lg"
                   />
                 </div>
               </div>
               <div className="p-6">
-                <h5 className="text-lg font-bold mb-4">Ayat Black</h5>
-                <p className="mb-6">Web designer</p>
+                <h5 className="text-lg font-bold mb-4">Pero</h5>
+                <p className="mb-6">Technician</p>
                 <ul className="list-inside flex mx-auto justify-center">
                   <a href="#!" className="px-2">
                     <svg

@@ -71,7 +71,7 @@ const DjCard = ({
           />
           <div className="absolute bg-black/40 rounded-b-lg w-full bottom-0 backdrop-blur-3xl flex justify-center py-2">
             <b>
-              <span className={`text-4xl text-[#f1852c]`}>{label}</span>
+              <span className={`text-4xl text-white`}>{label}</span>
             </b>
           </div>
         </div>

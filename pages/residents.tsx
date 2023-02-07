@@ -5,17 +5,17 @@ import { coolFont } from "../components/utils/fonts";
 
 const Residents = () => {
   return (
-    <div className="w-full min-h-screen flex flex-col flex-wrap items-center mt-10 justify-center relative 2xl:grid 2xl:grid-cols-2">
-      <div className="flex justify-center w-full items-center p-3 flex-col mt-24 left-0 right-0 margin-auto">
+    <div className="w-full lg:min-h-screen flex flex-col flex-wrap items-center mt-[3.5rem] md:mt-20 justify-center relative 2xl:grid 2xl:grid-cols-2">
+      <div className="flex justify-center w-full items-center p-3 flex-col left-0 right-0 margin-auto">
         <div className="max-w-xl flex flex-col justify-center items-center rounded-xl">
           <div>
             <h1
-              className={`text-7xl ${coolFont.className} text-[#f1852c] ml-8 mr-8 md:mt-8 md:mb-8`}
+              className={`text-6xl md:text-7xl ${coolFont.className} text-[#f1852c] ml-8 mr-8 md:mt-8 mb-8`}
             >
-              Lawaai DJ residents
+              Lawaai residents
             </h1>
           </div>
-          <span className="max-w-xl ml-8 mr-8 md:mt-8 md:mb-8">
+          <span className="max-w-xl ml-8 mr-8 md:mt-8 md:mb-8 text-white text-justify">
             <i>
               By definiton, DJ residents are DJs who have a regular, recurring
               gig at a specific venue or club. They are typically responsible

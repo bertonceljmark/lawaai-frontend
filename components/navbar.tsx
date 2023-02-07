@@ -55,10 +55,12 @@ const Navbar = ({ isMobile = false }) => {
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           type="button"
-          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg hover:bg-secondary focus:outline-none focus:ring-2 focus:bg-[#852cf1] focus:ring-transparent"
+          className={`inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg focus:outline-none focus:ring-2 ${
+            mobileMenuOpen && " bg-[#f1852c]"
+          } focus:ring-transparent`}
         >
           <svg
-            className="w-6 h-6 fill-primary hover:fill-secondary"
+            className={"w-6 h-6"}
             aria-hidden="true"
             viewBox="0 0 20 20"
             id="logo-nav"

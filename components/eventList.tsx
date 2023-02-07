@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { getEventPhotos, getEvents } from "../utils/api";
 import EventCard from "./eventCard";
 import Modal from "./gallery/Modal";
@@ -17,6 +17,8 @@ const EventList = () => {
     undefined
   );
 
+  const modalRef = useRef<null | HTMLDivElement>(null);
+
   useEffect(() => {
     getEvents(setEvents);
   }, []);
@@ -32,11 +34,17 @@ const EventList = () => {
 
   useEffect(() => {
     if (eventPhotos.length > 0) {
-      return setCurrentPhoto(
+      setCurrentPhoto(
         eventPhotos.find((image: any) => image.id == photoId) || {}
       );
     }
   }, [photoId, eventPhotos]);
+
+  useEffect(() => {
+    if (eventPhotos.length > 0 && modalRef && modalRef.current) {
+      modalRef.current.scrollIntoView();
+    }
+  }, [eventPhotos]);
 
   const handleClick = (id: number) => {
     return () => {
@@ -67,7 +75,7 @@ const EventList = () => {
           );
         })}
       </div>
-      <main className="mx-auto max-w-[1960px] p-4">
+      <main ref={modalRef} className="mx-auto max-w-[1960px] p-4">
         {photoId && (
           <Modal
             images={eventPhotos}
