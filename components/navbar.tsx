@@ -27,7 +27,6 @@ const Navbar = ({ isMobile = false }) => {
         </div>
         <div className="right-0 left-0 m-auto pr-10 py-3text-lg text-white top-0 gap-0 flex justify-center item-center">
           <MenuItem name="home" active={active} />
-          <MenuItem name="about" active={active} />
           <MenuItem name="residents" active={active} />
           <MenuItem name="blog" active={active} />
           <MenuItem name="contact" active={active} />
@@ -38,7 +37,7 @@ const Navbar = ({ isMobile = false }) => {
   }
 
   return (
-    <nav className="bg-primary px-2 py-2.5 z-10 absolute w-full">
+    <nav className="backdrop-blur-md px-2 py-2.5 z-10 absolute w-full">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         <Link href="/" className="flex items-center">
           <div className="h-10 w-10 relative">
@@ -49,7 +48,7 @@ const Navbar = ({ isMobile = false }) => {
               fill
             />
           </div>
-          <span className="self-center text-xl font-semibold whitespace-nowrap text-white relative">
+          <span className="self-center text-xl ml-2 font-semibold whitespace-nowrap text-white relative">
             Lawaai
           </span>
         </Link>
@@ -79,7 +78,6 @@ const Navbar = ({ isMobile = false }) => {
         >
           <ul className="flex flex-col p-4 mt-4">
             <MobileMenuItem name={"home"} active={active}></MobileMenuItem>
-            <MobileMenuItem name={"about"} active={active}></MobileMenuItem>
             <MobileMenuItem name={"residents"} active={active}></MobileMenuItem>
             <MobileMenuItem name={"blog"} active={active}></MobileMenuItem>
             <MobileMenuItem name={"contact"} active={active}></MobileMenuItem>

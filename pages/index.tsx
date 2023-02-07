@@ -1,8 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
 import CardSection from "../components/cardSection";
 import HeroSection from "../components/heroSection";
-import styles from "../styles/Home.module.css";
+import TeamSection from "../components/teamSection";
 
 export default function Home() {
   return (
@@ -11,7 +10,8 @@ export default function Home() {
         <title>Lawaai | Home</title>
       </Head>
       <HeroSection></HeroSection>
-      <CardSection></CardSection>
+      <TeamSection></TeamSection>
+      {/* <CardSection></CardSection> */}
     </div>
   );
 }

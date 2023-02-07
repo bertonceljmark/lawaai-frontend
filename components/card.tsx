@@ -16,8 +16,8 @@ const Card = ({
       <div className="rounded-lg shadow-lg max-w-sm bg-white/30 backdrop-opacity-5">
         <div className="flex justify-center items-center p-5">
           <Image
-            width={384}
-            height={384}
+            width={150}
+            height={320}
             className="rounded-t-lg h-36"
             src={imgPath}
             alt=""

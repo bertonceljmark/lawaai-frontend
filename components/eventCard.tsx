@@ -18,12 +18,12 @@ const EventCard = ({
     );
   };
   return (
-    <div className="flex justify-center m-5 relative">
+    <div className="flex justify-center m-5 mb-20 relative after:content group  cursor-pointer after:pointer-events-none after:inset-0 after:rounded-lg after:shadow-highlight">
       <div className="group rounded-t-lg shadow-lg max-w-md relative w-96">
         <div
           className={`w-full rounded-lg bg-black/40 absolute hidden group-hover:flex backdrop-blur-lg  justify-center items-center`}
         />
-        <div className="flex justify-center items-center relative">
+        <div className="flex justify-center items-center relative transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110">
           <Image
             onClick={onClick}
             className="rounded-t-lg"

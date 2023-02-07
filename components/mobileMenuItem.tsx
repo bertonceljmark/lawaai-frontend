@@ -6,10 +6,10 @@ const MobileMenuItem = ({ name, active }) => {
     <li>
       <Link className="" href={`/${name !== "home" ? name : ""}`}>
         <span
-          className={`block py-2 pl-3 pr-4 text-white rounded ${
+          className={`block py-2 pl-3 pr-4 rounded ${
             active == name || (active === "" && name === "home")
-              ? "bg-secondary"
-              : "bg-primary"
+              ? "text-[#f1852c]"
+              : "text-white"
           }`}
         >
           {name.toUpperCase()}

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import React, { useState, useEffect, useMemo, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { getEventPhotos, getEvents } from "../utils/api";
 import EventCard from "./eventCard";
 import Modal from "./gallery/Modal";
