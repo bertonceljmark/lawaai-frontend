@@ -44,7 +44,7 @@ export default function PostList({ post, aspect, blurDataUrl }) {
           </Link>
         </div>
         <h2 className="mt-2 text-lg font-semibold tracking-normal text-brand-primary text-white">
-          <Link href={`/post/${post.slug.current}`}>
+          <Link href={`/post/${post.slug}`}>
             <span
               className="     bg-gradient-to-r from-purple-800 to-purple-900
           bg-[length:0px_10px]
