@@ -66,7 +66,7 @@ export default function SharedModal({
   if (currentPhoto && !currentPhoto?.url) {
     return <Loader></Loader>;
   }
-  console.log(currentPhoto);
+
   return (
     <MotionConfig
       transition={{

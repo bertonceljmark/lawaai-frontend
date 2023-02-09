@@ -1,3 +1,10 @@
+import {
+  faFacebookF,
+  faInstagram,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import { faAmbulance } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -16,18 +23,104 @@ const Navbar = ({ isMobile = false }) => {
 
   if (!isMobile) {
     return (
-      <nav className="right-0 left-0 m-auto p-0 w-ful pt-5 text-lg text-white top-0 gap-0 rounded-br-md rounded-bl-md backdrop-blur-md flex justify-between item-center absolute z-30">
-        <div className="flex lg:min-w-0 flex-1 m-auto ml-20">
-          <Link className="mx-5 h-20 w-20 relative" href={"/"}>
-            <Image fill src="/media/lawaai-logo.png" alt="" />
-          </Link>
-        </div>
-        <div className="right-0 left-0 m-auto pr-10 py-3text-lg text-white top-0 gap-0 flex justify-center item-center">
+      <nav className="relative px-4 py-4 flex justify-between items-center backdrop-blur-md z-50">
+        <Link className="h-10 w-10 relative" href={"/"}>
+          <Image fill src="/media/lawaai-logo.png" alt="logo" />
+        </Link>
+        <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
           <MenuItem name="home" active={active} />
+          <li className="text-gray-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              className="w-4 h-4 current-fill"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+              />
+            </svg>
+          </li>
           <MenuItem name="residents" active={active} />
+          <li className="text-gray-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              className="w-4 h-4 current-fill"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+              />
+            </svg>
+          </li>
           <MenuItem name="blog" active={active} />
-          <MenuItem name="contact" active={active} />
+          <li className="text-gray-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              className="w-4 h-4 current-fill"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+              />
+            </svg>
+          </li>
           <MenuItem name="events" active={active} />
+          <li className="text-gray-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              className="w-4 h-4 current-fill"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+              />
+            </svg>
+          </li>
+          <MenuItem name="contact" active={active} />
+        </ul>
+
+        <div className="py-2 px-6 w-full flex items-end justify-end">
+          <Link className="ml-9" href="https://www.youtube.com/Lawaai">
+            <FontAwesomeIcon
+              icon={faYoutube}
+              style={{ fontSize: "1.25rem", color: "white" }}
+            />
+          </Link>
+          <Link className="ml-9" href="https://www.facebook.com/LawaaiEvents">
+            <FontAwesomeIcon
+              icon={faFacebookF}
+              style={{ fontSize: "1.25rem", color: "white" }}
+            />
+          </Link>
+          <Link
+            className="ml-9"
+            href="https://www.instagram.com/lawaai.events/"
+          >
+            <FontAwesomeIcon
+              icon={faInstagram}
+              style={{ fontSize: "1.25rem", color: "white" }}
+            />
+          </Link>
         </div>
       </nav>
     );
