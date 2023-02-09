@@ -17,10 +17,7 @@ const Navbar = ({ isMobile = false }) => {
   if (!isMobile) {
     return (
       <nav className="right-0 left-0 m-auto p-0 w-ful pt-5 text-lg text-white top-0 gap-0 rounded-br-md rounded-bl-md backdrop-blur-md flex justify-between item-center absolute z-30">
-        <div
-          className="flex lg:min-w-0 flex-1 m-auto ml-20"
-          aria-label="Global"
-        >
+        <div className="flex lg:min-w-0 flex-1 m-auto ml-20">
           <Link className="mx-5 h-20 w-20 relative" href={"/"}>
             <Image fill src="/media/lawaai-logo.png" alt="" />
           </Link>
