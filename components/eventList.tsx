@@ -20,13 +20,8 @@ const EventList = () => {
   const modalRef = useRef<null | HTMLDivElement>(null);
 
   useEffect(() => {
-    getEvents(setEvents);
-  }, []);
-
-  useEffect(() => {
     if (!galleryId) return;
-
-    getEventPhotos({
+    const photos = getEventPhotos({
       galleryId: galleryId || "0",
       setEventPhotos,
     });
@@ -87,26 +82,39 @@ const EventList = () => {
         )}
         <div className="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4">
           {!!eventPhotos?.length &&
-            eventPhotos.map(({ id, sizes }: { id: any; sizes: any }) => (
-              <div
-                key={id}
-                className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
-                onClick={() => setPhotoId(id)}
-              >
-                <Image
-                  alt="Lawaai event photo"
-                  className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
-                  style={{ transform: "translate3d(0, 0, 0)" }}
-                  src={sizes?.medium?.url || ""}
-                  width={720}
-                  height={480}
-                  sizes="(max-width: 640px) 100vw,
+            eventPhotos[0]?.id &&
+            eventPhotos.map(
+              ({
+                id,
+                sizes,
+                blurDataUrl,
+              }: {
+                id: any;
+                sizes: any;
+                blurDataUrl: string;
+              }) => (
+                <div
+                  key={id}
+                  className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
+                  onClick={() => setPhotoId(id)}
+                >
+                  <Image
+                    alt="Lawaai event photo"
+                    className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
+                    style={{ transform: "translate3d(0, 0, 0)" }}
+                    src={sizes.medium.url}
+                    placeholder="blur"
+                    blurDataURL={blurDataUrl}
+                    width={720}
+                    height={480}
+                    sizes="(max-width: 640px) 100vw,
                   (max-width: 1280px) 50vw,
                   (max-width: 1536px) 33vw,
                   25vw"
-                />
-              </div>
-            ))}
+                  />
+                </div>
+              )
+            )}
         </div>
       </main>
     </>

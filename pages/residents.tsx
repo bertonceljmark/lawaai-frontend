@@ -30,7 +30,7 @@ const Residents = () => {
           </span>
         </div>
       </div>
-      <div className="flex justify-center flex-col mt-24 max-w-[80%]">
+      <div className="flex justify-center flex-col max-w-full">
         <DjCardSection />
       </div>
     </div>

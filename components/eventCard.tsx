@@ -5,6 +5,8 @@ const EventCard = ({
   thumbnail = "",
   location = "",
   date = "",
+  blurDataUrl = "",
+  alt = "Event Thumbnail",
   onClick = () => {},
 }) => {
   const reformattedDate = () => {
@@ -18,35 +20,44 @@ const EventCard = ({
     );
   };
   return (
-    <div className="flex justify-center m-5 mb-20 relative after:content group  cursor-pointer after:pointer-events-none after:inset-0 after:rounded-lg after:shadow-highlight">
-      <div className="group rounded-t-lg shadow-lg max-w-md relative w-96">
+    <div className="">
+      <div className="cursor-pointer group">
         <div
-          className={`w-full rounded-lg bg-black/40 absolute hidden group-hover:flex backdrop-blur-lg  justify-center items-center`}
-        />
-        <div className="flex justify-center items-center relative transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110">
+          className={
+            "relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800 hover:scale-105 aspect-square"
+          }
+        >
           <Image
             onClick={onClick}
-            className="rounded-t-lg"
+            style={{ objectFit: "cover" }}
+            className="transition-all"
             src={thumbnail}
-            alt=""
+            sizes="80vw"
+            fill
+            alt={alt}
             placeholder="blur"
-            blurDataURL="data:..."
-            width={384}
-            height={384}
+            blurDataURL={blurDataUrl}
           />
         </div>
-      </div>
-      <div className="absolute bg-black/40 rounded-b-lg w-full bottom-0 backdrop-blur-3xl flex justify-center py-2 translate-y-full">
-        <span className={`text-4xl text-white ${""}`}>
-          {
-            <span className="text-center w-full flex justify-center flex-col">
-              <span className="text-center w-full">{location}</span>
-              <span className="text-center w-full text-sm">
-                {reformattedDate()}
-              </span>
-            </span>
-          }
-        </span>
+        <h2 className="mt-2 text-3xl font-semibold tracking-normal text-brand-primary text-white flex justify-center">
+          <span
+            className="bg-gradient-to-r from-purple-800 to-purple-900
+          bg-[length:0px_10px]
+          bg-left-bottom
+          bg-no-repeat
+          transition-[background-size]
+          duration-500
+          hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]
+          text"
+          >
+            {location}
+          </span>
+        </h2>
+        <div className="flex items-center mt-1 space-x-3 text-gray-500 dark:text-gray-400 justify-center">
+          <time className="text-sm " dateTime={reformattedDate()}>
+            {reformattedDate()}
+          </time>
+        </div>
       </div>
     </div>
   );

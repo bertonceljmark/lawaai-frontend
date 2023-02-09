@@ -8,7 +8,7 @@ import {
 import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import { variants } from "../../utils/animationVariants";
 import { range } from "../../utils/range";
@@ -26,9 +26,23 @@ export default function SharedModal({
 }: SharedModalProps) {
   const [loaded, setLoaded] = useState(false);
 
+  const prevIndex = useRef();
+  const [caroIndex, setCaroIndex] = useState();
+
+  const index = images.findIndex((x) => x.id === photoId);
+
+  useEffect(() => {
+    if (prevIndex.current != photoId) {
+      setCaroIndex(photoId);
+    }
+    prevIndex.current = photoId;
+  }, [photoId]);
+
   let filteredImages = images
     ?.filter((img: ImageProps) =>
-      range(Number(photoId) - 15, Number(photoId) + 15).includes(img.id)
+      range(index - 15, index + 15).includes(
+        images.findIndex((x) => img.id === x.id)
+      )
     )
     .sort((a, b) => Number(a.id) - Number(b.id));
 
@@ -52,7 +66,7 @@ export default function SharedModal({
   if (currentPhoto && !currentPhoto?.url) {
     return <Loader></Loader>;
   }
-
+  console.log(currentPhoto);
   return (
     <MotionConfig
       transition={{
@@ -69,7 +83,7 @@ export default function SharedModal({
           <div className="relative flex aspect-[3/2] items-center justify-center">
             <AnimatePresence initial={false} custom={direction}>
               <motion.div
-                key={photoId}
+                key={caroIndex}
                 custom={direction}
                 variants={variants}
                 initial="enter"
@@ -78,9 +92,11 @@ export default function SharedModal({
                 className="absolute"
               >
                 <Image
-                  src={currentPhoto ? currentPhoto.url : ""}
-                  width={navigation ? 1280 : 1920}
-                  height={navigation ? 853 : 1280}
+                  src={currentPhoto.sizes.large.url}
+                  width={Number(currentPhoto.width)}
+                  height={Number(currentPhoto.height)}
+                  placeholder="blur"
+                  blurDataURL={currentPhoto.blurDataUrl}
                   priority
                   alt="Event photo"
                   onLoadingComplete={() => setLoaded(true)}
@@ -152,19 +168,16 @@ export default function SharedModal({
               >
                 <AnimatePresence initial={false}>
                   {filteredImages &&
-                    filteredImages.map(({ public_id, format, id, sizes }) => (
+                    filteredImages.map(({ id, sizes }) => (
                       <motion.button
                         initial={{
                           width: "0%",
-                          x: `${Math.max(
-                            (Number(photoId) - 1) * -100,
-                            15 * -100
-                          )}%`,
+                          x: `${Math.max((index - 1) * -100, 15 * -100)}%`,
                         }}
                         animate={{
                           scale: id === Number(photoId) ? 1.25 : 1,
                           width: "100%",
-                          x: `${Math.max(Number(photoId) * -100, 15 * -100)}%`,
+                          x: `${Math.max(index * -100, 15 * -100)}%`,
                         }}
                         exit={{ width: "0%" }}
                         onClick={() => changePhotoId(id)}

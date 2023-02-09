@@ -25,14 +25,14 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <div className="relative max-w-screen h-full overflow-hidden">
-      <Image
+      {/* <Image
         className="absolute w-[70%] top-0 right-0 overflow-hidden z-0 hidden lg:block"
         src="/media/abstract-hero-art-1-cr.png"
         alt="abstrac art"
         priority
         width={2127}
         height={2894}
-      />
+      /> */}
       <Navbar isMobile={isMobile} />
       <Component {...pageProps} />
       <Footer></Footer>

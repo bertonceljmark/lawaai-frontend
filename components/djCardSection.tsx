@@ -5,7 +5,7 @@ import DjCard from "./djCard";
 const DjCardSection = () => {
   return (
     <div>
-      <div className="w-full flex justify-center items-center flex-col lg:flex-row flex-wrap">
+      <div className="w-full flex justify-center items-center flex-col lg:flex-row 2xl:justify-start flex-wrap">
         <DjCard
           instagram="https://www.instagram.com/nojicaljosa/"
           youtube="https://www.youtube.com/watch?v=yph7PxxyS_U"

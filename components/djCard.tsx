@@ -12,7 +12,7 @@ const DjCard = ({
 }) => {
   return (
     <div className="flex justify-center m-5 aspect-square relative">
-      <div className="group rounded-lg shadow-lg relative w-full lg:w-64">
+      <div className="group rounded-lg shadow-lg relative w-full lg:w-80">
         <div
           className={`w-full h-full rounded-lg bg-black/40 absolute hidden group-hover:flex backdrop-blur-lg  justify-center items-center`}
         >
@@ -63,8 +63,8 @@ const DjCard = ({
         </div>
         <div className="flex justify-center items-center">
           <Image
-            width={384}
-            height={384}
+            width={500}
+            height={500}
             className="rounded-lg h-full"
             src={imgPath}
             alt="DJ cover"
