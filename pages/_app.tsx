@@ -9,6 +9,7 @@ import Router from "next/router";
 import PageLoader from "../components/pageLoader";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import Background from "../components/background";
 config.autoAddCss = false;
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -52,14 +53,15 @@ export default function App({ Component, pageProps }: AppProps) {
       {loading && <PageLoader></PageLoader>}
 
       <div className="relative max-w-screen h-full overflow-hidden">
-        <Image
-          className="absolute w-[70%] top-0 right-0 overflow-hidden z-0 hidden lg:block"
-          src="/media/abstract-hero-art-1-cr.png"
+        <Background></Background>
+        {/* <Image
+          className="absolute top-0 left-0 overflow-hidden z-0 hidden lg:block"
+          src="/media/abstract-bg.png"
           alt="abstrac art"
           priority
           width={2127}
           height={2894}
-        />
+        /> */}
         <Navbar isMobile={isMobile} />
 
         <Transition>{<Component {...pageProps} />}</Transition>

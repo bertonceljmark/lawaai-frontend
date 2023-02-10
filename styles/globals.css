@@ -49,12 +49,30 @@ blockquote {
   font-size: 1.5rem;
   font-weight: bold;
 }
+.wrapper {
+  height: 100vh;
+  min-width: 360px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+}
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@keyframes scroll {
+  100% {
+    background-position: 0px -3000px;
   }
-  body {
-    color: white;
+}
+
+@media (prefers-reduced-motion) {
+  .wrapper {
+    animation: scroll 200s linear infinite;
+  }
+}
+
+@media (min-width: 670px) {
+  .title {
+    font-size: 5rem;
   }
 }
