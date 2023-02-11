@@ -22,7 +22,6 @@ const Background = () => {
       );
     }
     return () => {
-      console.log(vantaEffect);
       if (vantaEffect) vantaEffect.destroy();
     };
   }, [vantaEffect]);
