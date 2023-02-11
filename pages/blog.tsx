@@ -8,7 +8,7 @@ import PostList from "../components/blog/postlist";
 
 export default function Blog({ postdata }) {
   return (
-    <div className="mt-[3.5rem] md:mt-0 min-h-screen text-white">
+    <div className="mt-[3.5rem] lg:mt-0 min-h-screen text-white">
       {postdata && (
         <div className="container px-8 py-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg">
           <h1 className="text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">

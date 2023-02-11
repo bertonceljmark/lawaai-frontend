@@ -5,7 +5,7 @@ import DjCardSection from "../components/djCardSection";
 
 const Residents = () => {
   return (
-    <div className="mt-[3.5rem] md:mt-0 min-h-screen">
+    <div className="mt-[3.5rem] lg:mt-0 min-h-screen">
       <Head>
         <title>Lawaai | Residents</title>
         <link rel="icon" href="/favicon.ico" />

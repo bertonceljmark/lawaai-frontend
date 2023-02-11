@@ -27,7 +27,7 @@ export default function Post(props) {
     );
   };
   return (
-    <div className="relative mt-[3.5rem] md:mt-28">
+    <div className="relative mt-[3.5rem] lg:mt-28">
       {postdata && (
         <>
           <Container className="!pt-0">
