@@ -3,7 +3,6 @@ import {
   faInstagram,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { faAmbulance } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,8 +23,14 @@ const Navbar = ({ isMobile = false }) => {
   if (!isMobile) {
     return (
       <nav className="relative px-4 py-4 flex justify-between items-center backdrop-blur-md z-50">
-        <Link className="h-10 w-10 relative" href={"/"}>
-          <Image fill src="/media/lawaai-logo.png" alt="logo" />
+        <Link className="ml-6 relative" href={"/"}>
+          <Image
+            src="/lawaai.svg"
+            width={64}
+            height={64}
+            alt="logo"
+            className="hover:animate-spin"
+          />
         </Link>
         <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
           <MenuItem name="home" active={active} />
@@ -103,13 +108,15 @@ const Navbar = ({ isMobile = false }) => {
           <Link className="ml-9" href="https://www.youtube.com/Lawaai">
             <FontAwesomeIcon
               icon={faYoutube}
-              style={{ fontSize: "1.25rem", color: "white" }}
+              style={{ fontSize: "1.25rem" }}
+              className="text-white hover:text-gray-300"
             />
           </Link>
           <Link className="ml-9" href="https://www.facebook.com/LawaaiEvents">
             <FontAwesomeIcon
               icon={faFacebookF}
-              style={{ fontSize: "1.25rem", color: "white" }}
+              style={{ fontSize: "1.25rem" }}
+              className="text-white hover:text-gray-300"
             />
           </Link>
           <Link
@@ -118,7 +125,8 @@ const Navbar = ({ isMobile = false }) => {
           >
             <FontAwesomeIcon
               icon={faInstagram}
-              style={{ fontSize: "1.25rem", color: "white" }}
+              style={{ fontSize: "1.25rem" }}
+              className="text-white hover:text-gray-300"
             />
           </Link>
         </div>

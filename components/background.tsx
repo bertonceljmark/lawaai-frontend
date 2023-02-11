@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import HALO from "vanta/dist/vanta.halo.min";
+
 import * as THREE from "three";
+import halo from "./vanta/halo";
 
 const Background = () => {
   const [vantaEffect, setVantaEffect] = useState(null);
@@ -8,8 +9,14 @@ const Background = () => {
   useEffect(() => {
     if (!vantaEffect) {
       setVantaEffect(
-        HALO({
+        halo({
           el: myRef.current,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          backgroundColor: "#180432",
           THREE: THREE,
         })
       );
@@ -24,7 +31,7 @@ const Background = () => {
     <>
       <div
         ref={myRef}
-        className="wrapper h-screen w-screen border text-white p-2 text-lg z-5 fixed blur-2xl"
+        className="h-screen w-screen text-white p-2 text-lg z-5 blur-2xl absolute"
       ></div>
     </>
   );

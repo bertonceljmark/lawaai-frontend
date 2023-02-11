@@ -51,7 +51,7 @@ const Events = ({ events }) => {
   }
 
   return (
-    <div className="mt-[3.5rem] md:mt-20 min-h-screen">
+    <div className="mt-[3.5rem] md:mt-0 min-h-screen">
       <Head>
         <title>Lawaai | Events</title>
         <link rel="icon" href="/favicon.ico" />

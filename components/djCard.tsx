@@ -1,6 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSoundcloud,
+  faInstagram,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 const DjCard = ({
   label = "",
@@ -11,57 +18,45 @@ const DjCard = ({
   youtube = "",
 }) => {
   return (
-    <div className="flex justify-center m-5 aspect-square relative">
-      <div className="group rounded-lg shadow-lg relative w-full lg:w-80">
+    <div className="">
+      <div className="group relative">
         <div
-          className={`w-full h-full rounded-lg bg-black/40 absolute hidden group-hover:flex backdrop-blur-lg  justify-center items-center`}
+          className={`w-full h-full rounded-lg absolute hidden group-hover:flex z-20 justify-center items-center gap-10`}
         >
           {instagram && (
             <Link href={instagram}>
-              <Image
-                width={64}
-                height={64}
-                alt="Instagram icon"
-                className="m-3"
-                src="/media/instagram-icon.png"
+              <FontAwesomeIcon
+                icon={faInstagram}
+                style={{ fontSize: "3rem", color: "white" }}
               />
             </Link>
           )}
           {soundcloud && (
             <Link href={soundcloud}>
-              <Image
-                width={64}
-                height={64}
-                alt="Soundcloud icon"
-                className="m-3"
-                src="/media/soundcloud-icon.png"
+              <FontAwesomeIcon
+                icon={faSoundcloud}
+                style={{ fontSize: "3rem", color: "white" }}
               />
             </Link>
           )}
           {website && (
             <Link href={website}>
-              <Image
-                width={64}
-                height={64}
-                alt="Website icon"
-                className="m-3"
-                src="/media/website-icon.png"
+              <FontAwesomeIcon
+                icon={faGlobe}
+                style={{ fontSize: "3rem", color: "white" }}
               />
             </Link>
           )}
           {youtube && (
             <Link href={youtube}>
-              <Image
-                width={64}
-                height={64}
-                alt="Youtube icon"
-                className="m-3"
-                src="/media/youtube-icon.png"
+              <FontAwesomeIcon
+                icon={faYoutube}
+                style={{ fontSize: "3rem", color: "white" }}
               />
             </Link>
           )}
         </div>
-        <div className="flex justify-center items-center">
+        <div className="group-hover:blur-xl relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800 hover:scale-105 aspect-square">
           <Image
             width={500}
             height={500}
@@ -69,12 +64,21 @@ const DjCard = ({
             src={imgPath}
             alt="DJ cover"
           />
-          <div className="absolute bg-black/40 rounded-b-lg w-full bottom-0 backdrop-blur-3xl flex justify-center py-2">
-            <b>
-              <span className={`text-4xl text-white`}>{label}</span>
-            </b>
-          </div>
         </div>
+        <h2 className="mt-2 text-3xl font-semibold tracking-normal text-brand-primary text-white flex justify-center">
+          <span
+            className="bg-gradient-to-r from-purple-800 to-purple-900
+          bg-[length:0px_10px]
+          bg-left-bottom
+          bg-no-repeat
+          transition-[background-size]
+          duration-500
+          hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]
+          text"
+          >
+            {label}
+          </span>
+        </h2>
       </div>
     </div>
   );

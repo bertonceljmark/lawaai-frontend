@@ -22,11 +22,7 @@ const EventCard = ({
   return (
     <div className="">
       <div className="cursor-pointer group">
-        <div
-          className={
-            "relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800 hover:scale-105 aspect-square"
-          }
-        >
+        <div className="relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800 hover:scale-105 aspect-square">
           <Image
             onClick={onClick}
             style={{ objectFit: "cover" }}
