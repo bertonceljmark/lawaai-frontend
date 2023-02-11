@@ -53,7 +53,7 @@ export default function App({ Component, pageProps }: AppProps) {
       {loading && <PageLoader></PageLoader>}
 
       <div className="relative max-w-screen h-full overflow-hidden">
-        <Background></Background>
+        {!isMobile && <Background />}
         {/* <Image
           className="absolute top-0 left-0 overflow-hidden z-0 hidden lg:block"
           src="/media/abstract-bg.png"
