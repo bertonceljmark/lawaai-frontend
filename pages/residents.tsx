@@ -7,8 +7,63 @@ const Residents = () => {
   return (
     <div className="mt-[3.5rem] lg:mt-0 min-h-screen">
       <Head>
-        <title>Lawaai | Residents</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Residents</title>
+        <meta
+          name="description"
+          content={
+            "Discover our talented DJ residents and the vibrant world of techno music through our residents page. Explore the work of our residents."
+          }
+        />
+
+        {/* Schema.org metadata for Google */}
+        <script type="application/ld+json">{`
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://lawaai.vercel.app/residents"
+        },
+        "name": "Residents",
+        "description": "Discover our talented DJ residents and the vibrant world of techno music through our residents page. Explore the work of our residents.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kranj",
+          "addressRegion": "Gorenjska",
+          "postalCode": "4000",
+          "addressCountry": "Slovenia"
+        },
+        "sameAs": [
+          "https://www.instagram.com/lawaai.events/",
+          "https://www.youtube.com/Lawaai",
+          "https://www.facebook.com/LawaaiEvents"
+        ]
+      }
+    `}</script>
+
+        {/* Open Graph metadata for Facebook and LinkedIn */}
+        <meta property="og:type" content="business.business" />
+        <meta property="og:title" content={"Residents"} />
+        <meta
+          property="og:description"
+          content={
+            "Discover our talented DJ residents and the vibrant world of techno music through our residents page. Explore the work of our residents."
+          }
+        />
+        <meta
+          property="og:url"
+          content={"https://lawaai.vercel.app/residents"}
+        />
+
+        {/* Twitter Card metadata */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={"Residents"} />
+        <meta
+          name="twitter:description"
+          content={
+            "Discover our talented DJ residents and the vibrant world of techno music through our residents page. Explore the work of our residents."
+          }
+        />
       </Head>
       <div className="container px-8 py-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg text-white">
         <h1 className="text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">

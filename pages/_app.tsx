@@ -3,7 +3,6 @@ import type { AppProps } from "next/app";
 import Navbar from "../components/navbar";
 import { useEffect, useState } from "react";
 import Footer from "../components/footer";
-import Image from "next/image";
 import Transition from "../components/transition";
 import Router from "next/router";
 import PageLoader from "../components/pageLoader";
@@ -54,14 +53,6 @@ export default function App({ Component, pageProps }: AppProps) {
 
       <div className="relative max-w-screen h-full overflow-hidden">
         {!isMobile && <Background />}
-        {/* <Image
-          className="absolute top-0 left-0 overflow-hidden z-0 hidden lg:block"
-          src="/media/abstract-bg.png"
-          alt="abstrac art"
-          priority
-          width={2127}
-          height={2894}
-        /> */}
         <Navbar isMobile={isMobile} />
 
         <Transition>{<Component {...pageProps} />}</Transition>

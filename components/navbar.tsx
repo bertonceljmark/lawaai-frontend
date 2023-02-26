@@ -139,13 +139,12 @@ const Navbar = ({ isMobile = false }) => {
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         <Link href="/" className="flex items-center">
           <div className="h-10 w-10 relative">
-          <Image
-            src="/lawaai.svg"
-            width={64}
-            height={64}
-            alt="logo"
-            className="hover:animate-spin"
-          />
+            <Image
+              src="/lawaai.svg"
+              width={64}
+              height={64}
+              alt="logo"
+              className="hover:animate-spin"
             />
           </div>
           <span className="self-center text-xl ml-2 font-semibold whitespace-nowrap text-white relative">

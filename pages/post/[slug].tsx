@@ -1,18 +1,15 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import { getBase64ImageUrl, getPosts } from "../../utils/api";
 import Container from "../../components/blog/container";
 import { richTextReducer } from "../../utils/textParser";
 
 export default function Post(props) {
-  const { postdata } = props;
+  const { postdata, notFound } = props;
 
-  const router = useRouter();
-
-  if (!router.isFallback && !postdata?.attributes?.slug) {
+  if (notFound) {
     return <ErrorPage statusCode={404} />;
   }
 
@@ -26,6 +23,7 @@ export default function Post(props) {
       parsedDate.getFullYear()
     );
   };
+
   return (
     <div className="relative mt-[3.5rem] lg:mt-28">
       {postdata && (
@@ -72,7 +70,6 @@ export default function Post(props) {
             )}
           </div>
 
-          {/* {post?.mainImage && <MainImage image={post.mainImage} />} */}
           <Container>
             <article className="max-w-screen-md mx-auto text-white">
               <div
@@ -102,6 +99,14 @@ export async function getStaticProps({ params, preview = false }) {
 
   let post = allPosts.find((post) => post.attributes.slug === params.slug);
 
+  if (!post) {
+    return {
+      props: {
+        notFound: true,
+      },
+      revalidate: 10,
+    };
+  }
   const publicId =
     post.attributes.image.data.attributes.provider_metadata.public_id;
   const format = post.attributes.image.data.attributes.ext.replace(".", "");
