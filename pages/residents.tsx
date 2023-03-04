@@ -7,63 +7,47 @@ const Residents = () => {
   return (
     <div className="mt-[3.5rem] lg:mt-0 min-h-screen">
       <Head>
-        <title>Residents</title>
+        <title>Residents | Lawaai</title>
+        <meta name="title" content="Residents" />
         <meta
           name="description"
-          content={
-            "Discover our talented DJ residents and the vibrant world of techno music through our residents page. Explore the work of our residents."
-          }
+          content="This page showcases the talented DJ residents who perform at Lawaai's techno events. Learn more about the role of a DJ resident and explore our impressive lineup of resident DJs, each with their unique style and flair. Connect with your favorite resident DJs on social media and stay up-to-date with the latest techno sounds at Lawaai."
         />
-
-        {/* Schema.org metadata for Google */}
-        <script type="application/ld+json">{`
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "https://lawaai.vercel.app/residents"
-        },
-        "name": "Residents",
-        "description": "Discover our talented DJ residents and the vibrant world of techno music through our residents page. Explore the work of our residents.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Kranj",
-          "addressRegion": "Gorenjska",
-          "postalCode": "4000",
-          "addressCountry": "Slovenia"
-        },
-        "sameAs": [
-          "https://www.instagram.com/lawaai.events/",
-          "https://www.youtube.com/Lawaai",
-          "https://www.facebook.com/LawaaiEvents"
-        ]
-      }
-    `}</script>
-
-        {/* Open Graph metadata for Facebook and LinkedIn */}
-        <meta property="og:type" content="business.business" />
-        <meta property="og:title" content={"Residents"} />
+        <meta
+          name="keywords"
+          content="lawaai residents, lawaai djs, lawaai dj residents, lawaai dj"
+        />
+        <meta property="og:url" content="https://lawaai.club/residents" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Residents" />
         <meta
           property="og:description"
-          content={
-            "Discover our talented DJ residents and the vibrant world of techno music through our residents page. Explore the work of our residents."
-          }
+          content="This page showcases the talented DJ residents who perform at Lawaai's techno events. Learn more about the role of a DJ resident and explore our impressive lineup of resident DJs, each with their unique style and flair. Connect with your favorite resident DJs on social media and stay up-to-date with the latest techno sounds at Lawaai."
         />
-        <meta
-          property="og:url"
-          content={"https://lawaai.vercel.app/residents"}
-        />
-
-        {/* Twitter Card metadata */}
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={"Residents"} />
+        <meta property="og:site_name" content="Lawaai" />
+        <meta name="twitter:title" content="Residents" />
         <meta
           name="twitter:description"
-          content={
-            "Discover our talented DJ residents and the vibrant world of techno music through our residents page. Explore the work of our residents."
-          }
+          content="This page showcases the talented DJ residents who perform at Lawaai's techno events. Learn more about the role of a DJ resident and explore our impressive lineup of resident DJs, each with their unique style and flair. Connect with your favorite resident DJs on social media and stay up-to-date with the latest techno sounds at Lawaai."
         />
+        <meta name="twitter:image" content="" />
+        <meta name="twitter:image:alt" content="Residents" />
+        <script type="application/ld+json">
+          {`"@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Residents",
+          "description": "This page showcases the talented DJ residents who perform at Lawaai's techno events. Learn more about the role of a DJ resident and explore our impressive lineup of resident DJs, each with their unique style and flair. Connect with your favorite resident DJs on social media and stay up-to-date with the latest techno sounds at Lawaai.",
+          "url": "https://lawaai.club/residents",
+          "image": "",
+          "sameAs": [
+            "https://www.facebook.club/lawaai",
+            "https://www.instagram.club/lawaai"
+          ],
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://lawaai.club/residents"
+          }`}
+        </script>
       </Head>
       <div className="container px-8 py-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg text-white">
         <h1 className="text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
