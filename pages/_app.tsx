@@ -62,7 +62,6 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   const isMobile = windowDimension <= 1024;
-  console.log(gtag);
   return (
     <>
        
