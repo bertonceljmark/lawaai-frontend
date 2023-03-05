@@ -41,10 +41,10 @@ export default function Blog({ postdata }) {
           dangerouslySetInnerHTML={{
             __html: `
         {
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "headline": "Blog - Lawaai",
-          "description": "Stay up-to-date with the latest techno music and events at Lawaai. Our blog features the latest news, insights, and behind-the-scenes stories from the techno music scene."
+          '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          'headline': 'Blog - Lawaai',
+          'description': 'Stay up-to-date with the latest techno music and events at Lawaai. Our blog features the latest news, insights, and behind-the-scenes stories from the techno music scene.'
         }
       `,
           }}

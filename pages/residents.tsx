@@ -33,19 +33,14 @@ const Residents = () => {
         <meta name="twitter:image" content="" />
         <meta name="twitter:image:alt" content="Residents" />
         <script type="application/ld+json">
-          {`"@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "Residents",
-          "description": "This page showcases the talented DJ residents who perform at Lawaai's techno events. Learn more about the role of a DJ resident and explore our impressive lineup of resident DJs, each with their unique style and flair. Connect with your favorite resident DJs on social media and stay up-to-date with the latest techno sounds at Lawaai.",
-          "url": "https://lawaai.club/residents",
-          "image": "",
-          "sameAs": [
-            "https://www.facebook.club/lawaai",
-            "https://www.instagram.club/lawaai"
-          ],
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://lawaai.club/residents"
+          {`'@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Residents',
+          'description': 'This page showcases the talented DJ residents who perform at Lawaai's techno events. Learn more about the role of a DJ resident and explore our impressive lineup of resident DJs, each with their unique style and flair. Connect with your favorite resident DJs on social media and stay up-to-date with the latest techno sounds at Lawaai.',
+          'url': "https://lawaai.club/residents',
+          'mainEntityOfPage': {
+            '@type': 'WebPage',
+            '@id': 'https://lawaai.club/residents'
           }`}
         </script>
       </Head>

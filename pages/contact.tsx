@@ -47,10 +47,10 @@ const Contact = () => {
         <script type="application/ld+json">
           {`
       {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Lawaai",
-        "url": "https://lawaai.club",
+        '@context': 'https://schema.org',
+        "@type": 'Organization',
+        'name': 'Lawaai',
+        'url': 'https://lawaai.club',
       }
     `}
         </script>

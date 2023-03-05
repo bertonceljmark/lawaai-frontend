@@ -4,17 +4,32 @@ import Navbar from "../components/navbar";
 import { useEffect, useState } from "react";
 import Footer from "../components/footer";
 import Transition from "../components/transition";
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
 import PageLoader from "../components/pageLoader";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import Background from "../components/background";
 import Script from "next/script";
+import * as gtag from "../lib/gtag";
 config.autoAddCss = false;
 
 export default function App({ Component, pageProps }: AppProps) {
   const [windowDimension, setWindowDimension] = useState(0);
   const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url);
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
 
   useEffect(() => {
     const start = () => {
@@ -47,13 +62,15 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   const isMobile = windowDimension <= 1024;
-
+  console.log(gtag);
   return (
     <>
+       
       <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-XX542EXJDR"
-      />
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"
+      ></Script>
+          
       <Script
         id="google-analytics"
         strategy="afterInteractive"
@@ -62,10 +79,10 @@ export default function App({ Component, pageProps }: AppProps) {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-XX542EXJDR', {
+          gtag('config', '${gtag.GA_MEASUREMENT_ID}', {
             page_path: window.location.pathname,
           });
-           `,
+        `,
         }}
       />
       {loading && <PageLoader></PageLoader>}

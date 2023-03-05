@@ -29,11 +29,11 @@ export default function Home() {
       />
       <script type="application/ld+json">
         {`
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Lawaai",
-          "url": "https://lawaai.club/",
-          "description": "Lawaai is a techno music events platform that hosts events with top DJs and producers from around the world."
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          'name': 'Lawaai',
+          'url': 'https://lawaai.club/',
+          'description': 'Lawaai is a techno music events platform that hosts events with top DJs and producers from around the world.'
     `}
       </script>
       <HeroSection></HeroSection>

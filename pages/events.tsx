@@ -75,11 +75,11 @@ const Events = ({ events }) => {
         <link rel="canonical" href="https://lawaai.club/events" />
         <meta name="robots" content="index,follow" />
         <script type="application/ld+json">
-          {`"@context": "http://schema.org",
-      "@type": "Event",
-      "name": "Lawaai - Past Events",
-      "description": "Check out our past techno events and gallery of images.",
-      }`}
+          {`'@context': 'http://schema.org',
+          "@type": 'Event',
+          'name': 'Lawaai - Past Events',
+          'description': 'Check out our past techno events and gallery of images.',
+          }`}
         </script>
       </Head>
       <div className="mt-[3.5rem] lg:mt-0 min-h-screen">
