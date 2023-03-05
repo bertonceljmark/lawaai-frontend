@@ -9,6 +9,7 @@ import PageLoader from "../components/pageLoader";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import Background from "../components/background";
+import Script from "next/script";
 config.autoAddCss = false;
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -49,8 +50,25 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-XX542EXJDR"
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XX542EXJDR', {
+            page_path: window.location.pathname,
+          });
+           `,
+        }}
+      />
       {loading && <PageLoader></PageLoader>}
-
       <div className="relative max-w-screen h-full overflow-hidden">
         {!isMobile && <Background />}
         <Navbar isMobile={isMobile} />
