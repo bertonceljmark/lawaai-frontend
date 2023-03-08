@@ -27,7 +27,7 @@ export default function Home() {
         name="twitter:description"
         content="Lawaai is a techno music events platform that hosts events with top DJs and producers from around the world. Stay up-to-date with our latest events, book tickets, and get in touch with us."
       />
-      <script type="application/ld+json">
+      {/* <script type="application/ld+json">
         {`
           '@context': 'https://schema.org',
           '@type': 'Organization',
@@ -35,7 +35,7 @@ export default function Home() {
           'url': 'https://lawaai.club/',
           'description': 'Lawaai is a techno music events platform that hosts events with top DJs and producers from around the world.'
     `}
-      </script>
+      </script> */}
       <HeroSection></HeroSection>
       <TeamSection></TeamSection>
     </div>

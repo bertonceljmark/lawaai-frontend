@@ -36,19 +36,19 @@ export default function Blog({ postdata }) {
         />
 
         {/* Schema.org data */}
-        <script
+        {/* <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: `
         {
-          '@context': 'https://schema.org',
-          '@type': 'BlogPosting',
-          'headline': 'Blog - Lawaai',
-          'description': 'Stay up-to-date with the latest techno music and events at Lawaai. Our blog features the latest news, insights, and behind-the-scenes stories from the techno music scene.'
+          &#x27@context&#x27: &#x27https://schema.org&#x27,
+          &#x27@type&#x27: &#x27BlogPosting&#x27,
+          &#x27headline&#x27: &#x27Blog - Lawaai&#x27,
+          &#x27description&#x27: &#x27Stay up-to-date with the latest techno music and events at Lawaai. Our blog features the latest news, insights, and behind-the-scenes stories from the techno music scene.&#x27
         }
       `,
           }}
-        />
+        /> */}
       </Head>
       <div className="mt-[3.5rem] lg:mt-0 min-h-screen text-white">
         {postdata && (

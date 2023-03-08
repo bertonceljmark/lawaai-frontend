@@ -44,16 +44,16 @@ const Contact = () => {
           content="https://lawaai.club/images/lawaai-logo.png"
         />
         <meta name="twitter:image:alt" content="Lawaai logo" />
-        <script type="application/ld+json">
+        {/* <script type="application/ld+json">
           {`
       {
-        '@context': 'https://schema.org',
-        "@type": 'Organization',
-        'name': 'Lawaai',
-        'url': 'https://lawaai.club',
+        &#x27@context&#x27: &#x27https://schema.org&#x27,
+        "@type": &#x27Organization&#x27,
+        &#x27name&#x27: &#x27Lawaai&#x27,
+        &#x27url&#x27: &#x27https://lawaai.club&#x27,
       }
     `}
-        </script>
+        </script> */}
       </Head>
       <div className="mt-[3.5rem] lg:mt-0 min-h-screen text-white">
         <div className="container px-8 py-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg">

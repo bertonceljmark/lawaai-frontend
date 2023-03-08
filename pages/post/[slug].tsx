@@ -55,7 +55,7 @@ export default function Post(props) {
         <meta name="twitter:site" content={"Lawaai"} />
 
         {/* Schema.org Markup */}
-        <script
+        {/* <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: `{
@@ -73,7 +73,7 @@ export default function Post(props) {
           "description": "${description}"
         }`,
           }}
-        />
+        /> */}
         <title>{title} | Lawaai</title>
       </Head>
       <div className="relative mt-[3.5rem] lg:mt-28">

@@ -74,13 +74,13 @@ const Events = ({ events }) => {
         <meta name="twitter:url" content="https://lawaai.club/events" />
         <link rel="canonical" href="https://lawaai.club/events" />
         <meta name="robots" content="index,follow" />
-        <script type="application/ld+json">
-          {`'@context': 'http://schema.org',
-          "@type": 'Event',
-          'name': 'Lawaai - Past Events',
-          'description': 'Check out our past techno events and gallery of images.',
+        {/* <script type="application/ld+json">
+          {`&#x27@context&#x27: &#x27http://schema.org&#x27,
+          "@type": &#x27Event&#x27,
+          &#x27name&#x27: &#x27Lawaai - Past Events&#x27,
+          &#x27description&#x27: &#x27Check out our past techno events and gallery of images.&#x27,
           }`}
-        </script>
+        </script> */}
       </Head>
       <div className="mt-[3.5rem] lg:mt-0 min-h-screen">
         <div className="container px-8 py-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg text-white">

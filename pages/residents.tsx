@@ -28,21 +28,21 @@ const Residents = () => {
         <meta name="twitter:title" content="Residents" />
         <meta
           name="twitter:description"
-          content="This page showcases the talented DJ residents who perform at Lawaai's techno events. Learn more about the role of a DJ resident and explore our impressive lineup of resident DJs, each with their unique style and flair. Connect with your favorite resident DJs on social media and stay up-to-date with the latest techno sounds at Lawaai."
+          content="This page showcases the talented DJ residents who perform at Lawaai&#x27s techno events. Learn more about the role of a DJ resident and explore our impressive lineup of resident DJs, each with their unique style and flair. Connect with your favorite resident DJs on social media and stay up-to-date with the latest techno sounds at Lawaai."
         />
         <meta name="twitter:image" content="" />
         <meta name="twitter:image:alt" content="Residents" />
-        <script type="application/ld+json">
-          {`'@context': 'https://schema.org',
-          '@type': 'WebPage',
-          'name': 'Residents',
-          'description': 'This page showcases the talented DJ residents who perform at Lawaai's techno events. Learn more about the role of a DJ resident and explore our impressive lineup of resident DJs, each with their unique style and flair. Connect with your favorite resident DJs on social media and stay up-to-date with the latest techno sounds at Lawaai.',
-          'url': "https://lawaai.club/residents',
-          'mainEntityOfPage': {
-            '@type': 'WebPage',
-            '@id': 'https://lawaai.club/residents'
+        {/* <script type="application/ld+json">
+          {`&#x27@context&#x27: &#x27https://schema.org&#x27,
+          &#x27@type&#x27: &#x27WebPage&#x27,
+          &#x27name&#x27: &#x27Residents&#x27,
+          &#x27description&#x27: &#x27This page showcases the talented DJ residents who perform at Lawaai&#x27s techno events. Learn more about the role of a DJ resident and explore our impressive lineup of resident DJs, each with their unique style and flair. Connect with your favorite resident DJs on social media and stay up-to-date with the latest techno sounds at Lawaai.&#x27,
+          &#x27url&#x27: "https://lawaai.club/residents&#x27,
+          &#x27mainEntityOfPage&#x27: {
+            &#x27@type&#x27: &#x27WebPage&#x27,
+            &#x27@id&#x27: &#x27https://lawaai.club/residents&#x27
           }`}
-        </script>
+        </script> */}
       </Head>
       <div className="container px-8 py-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg text-white">
         <h1 className="text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
