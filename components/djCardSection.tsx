@@ -18,13 +18,6 @@ const DjCardSection = () => {
         youtube="https://www.youtube.com/watch?v=iaCqT3zI5Io"
       />
       <DjCard
-        label="Yenko_o"
-        imgPath="/media/res-yenko_o.jpg"
-        youtube="https://www.youtube.com/watch?v=uNvpaTwqXgU"
-        instagram="https://www.instagram.com/jjenko_o/"
-        soundcloud="https://soundcloud.com/jan-jenko-396631917"
-      />
-      <DjCard
         label="Zihi"
         imgPath="/media/res-zihi.jpg"
         instagram="https://www.instagram.com/lovro_ziherl/"

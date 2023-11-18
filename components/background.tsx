@@ -1,23 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
-
-import * as THREE from "three";
-import halo from "./vanta/halo";
-
-const Background = () => {
-  const [vantaEffect, setVantaEffect] = useState(null);
-  const myRef = useRef(null);
-  useEffect(() => {
+const ExampleApp = (props) => {
+  const [vantaEffect, setVantaEffect] = React.useState(0);
+  const vantaRef = React.useRef(null);
+  React.useEffect(() => {
     if (!vantaEffect) {
       setVantaEffect(
-        halo({
-          el: myRef.current,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.0,
-          minWidth: 200.0,
-          backgroundColor: "#180432",
-          THREE: THREE,
+        VANTA.BIRDS({
+          el: vantaRef.current,
+          birdSize: 2,
         })
       );
     }
@@ -27,13 +16,11 @@ const Background = () => {
   }, [vantaEffect]);
 
   return (
-    <>
-      <div
-        ref={myRef}
-        className="h-screen w-screen text-white p-2 text-lg z-5 blur-2xl absolute"
-      ></div>
-    </>
+    <div className="vanta" ref={vantaRef}>
+      <span>Foreground content goes here</span>
+    </div>
   );
 };
 
-export default Background;
+const root = ReactDOM.createRoot(document.querySelector("#app"));
+root.render(<ExampleApp />);
